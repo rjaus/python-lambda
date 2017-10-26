@@ -498,6 +498,11 @@ def create_function(cfg, path_to_zip_file, *use_s3, **s3_file):
             'Timeout': cfg.get('timeout', 15),
             'MemorySize': cfg.get('memory_size', 512),
             'Publish': True,
+            'VpcConfig': {
+                'VpcId': cfg.get('vpc_id'),
+                'SubnetIds': cfg.get('subnet_ids', []),
+                'SecurityGroupIds': cfg.get('security_group_ids', []),
+            },
         }
     else:
         kwargs = {
@@ -510,6 +515,11 @@ def create_function(cfg, path_to_zip_file, *use_s3, **s3_file):
             'Timeout': cfg.get('timeout', 15),
             'MemorySize': cfg.get('memory_size', 512),
             'Publish': True,
+            'VpcConfig': {
+                'VpcId': cfg.get('vpc_id'),
+                'SubnetIds': cfg.get('subnet_ids', []),
+                'SecurityGroupIds': cfg.get('security_group_ids', []),
+            },
         }
 
     if 'environment_variables' in cfg:
@@ -573,6 +583,7 @@ def update_function(cfg, path_to_zip_file, *use_s3, **s3_file):
         'Timeout': cfg.get('timeout', 15),
         'MemorySize': cfg.get('memory_size', 512),
         'VpcConfig': {
+            'VpcId': cfg.get('vpc_id'),
             'SubnetIds': cfg.get('subnet_ids', []),
             'SecurityGroupIds': cfg.get('security_group_ids', []),
         },
