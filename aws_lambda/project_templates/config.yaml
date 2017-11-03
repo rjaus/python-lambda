@@ -28,9 +28,9 @@ aws_secret_access_key:
 
 # Experimental Environment variables
 environment_variables:
-    env_1: foo
-    env_2: baz
+		env_1: foo
+		env_2: baz
 
 # Build options
 build:
-  source_directories: lib # a comma delimited list of directories in your project root that contains source to package.
+	source_directories: lib # a comma delimited list of directories in your project root that contains source to package.
