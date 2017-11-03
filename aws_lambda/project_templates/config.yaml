@@ -21,6 +21,11 @@ aws_secret_access_key:
 # memory_size: 512
 #
 
+# VPC Settings (defaults to 'NoVPC')
+# vpc_id:
+# subnet_ids:
+# security_group_ids:
+
 # Experimental Environment variables
 environment_variables:
     env_1: foo
